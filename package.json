@@ -1,0 +1,19 @@
+{
+  "name": "knight-s-travails",
+  "version": "1.0.0",
+  "description": "This project finds and prints the shortest path for a knight in a chessboard to reach the desired cell from a given starting position.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Houser97/Knight-s-Travails.git"
+  },
+  "author": "Arturo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Houser97/Knight-s-Travails/issues"
+  },
+  "homepage": "https://github.com/Houser97/Knight-s-Travails#readme"
+}
