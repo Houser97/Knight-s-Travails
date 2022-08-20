@@ -15,3 +15,7 @@ let visited = [];
 
 // Se crea el arreglo que actuará como QUEUE.
 let queue = [];
+
+const isValid = (x, y, N) => {
+    return (x >= 0 && y >= 0 && x <= N && y <= N);
+};
