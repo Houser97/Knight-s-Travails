@@ -11,10 +11,11 @@ let row = [2, 2, -2, -2, 1, 1, -1, -1];
 let col = [-1, 1, 1, -1, 2, -2, 2, -2];
 
 const isValid = (x, y, N) => {
-    return (x >= 0 && y >= 0 && x <= N && y <= N);
+    return (x >= 0 && y >= 0 && x <= N -1 && y <= N - 1); 
+    //N-1 por que en el tablero se considera el 0, por lo que de 0 a 7 hay 8 casillas.
 };
 
-const knightMoves = (start, end) => {
+const BFS = (start, end) => {
     // Se crea el arreglo que contendrá a los nodos visitados.
     let visited = [];
 
@@ -50,4 +51,24 @@ const knightMoves = (start, end) => {
     return 'No such position is reachable.'
 };
 
-console.log(knightMoves([3,3], [4,3]));
+const knightMoves = (start, end) => {
+    let result = BFS(start, end);
+    let path = [];
+    let current = result;
+    if(typeof result !== 'string'){
+        while(current){
+            path.unshift(`\n [${[current.x, current.y]}]`);
+            current = current.parent;
+        };
+        let stringResult;
+        if(path.length === 2){
+            stringResult = `You made it in 1 move! Here's your path:`;
+        } else if(path.length > 2){
+            stringResult = `You made it in ${path.length - 1} moves! Here's your path:`
+        }
+        return stringResult + path.join('');
+    }
+    return path;
+}
+
+console.log(knightMoves([0,0], [7,6]));
