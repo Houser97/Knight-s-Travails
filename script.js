@@ -19,6 +19,16 @@ const BFS = (start, end) => {
     // Se crea el arreglo que contendrá a los nodos visitados.
     let visited = [];
 
+    //Se comprueba que el punto de inicio sea válido.
+    if(!isValid(start[0], start[1], 8)){
+        return 'Starting point is invalid.'
+    }
+
+    //Se comprueba que el punto de destino sea válido.
+    if(!isValid(end[0], end[1], 8)){
+        return 'Ending point is invalid.'
+    }
+
     // Se crea el nodo de inicio.
     let node = new Node(start[0], start[1], null);
 
@@ -68,7 +78,7 @@ const knightMoves = (start, end) => {
         }
         return stringResult + path.join('');
     }
-    return path;
+    return result;
 }
 
-console.log(knightMoves([0,0], [7,6]));
+console.log(knightMoves([0,0], [5,6]));
